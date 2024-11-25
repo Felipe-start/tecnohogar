@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Casa Inteligente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Control de Casa Inteligente</h1>
+    <p class="subtitle">Ingresa la contraseña para abrir la puerta:</p>
+    <div class="password-display">
+      <input type="text" id="password" readonly>
+    </div>
+    <div class="keypad">
+      <!-- Botones del teclado -->
+      <button class="key" data-key="1">1</button>
+      <button class="key" data-key="2">2</button>
+      <button class="key" data-key="3">3</button>
+      <button class="key" data-key="4">4</button>
+      <button class="key" data-key="5">5</button>
+      <button class="key" data-key="6">6</button>
+      <button class="key" data-key="7">7</button>
+      <button class="key" data-key="8">8</button>
+      <button class="key" data-key="9">9</button>
+      <button class="key" data-key="*">*</button>
+      <button class="key" data-key="0">0</button>
+      <button class="key" data-key="#">#</button>
+      <button id="clear">Borrar</button>
+      <button id="send">Enviar</button>
+    </div>
+
+    <!-- Botón de Conectar y lista de dispositivos -->
+    <button id="connect-btn">Conectar</button>
+    <div id="device-list" style="display:none;"></div> <!-- Lista de dispositivos -->
+
+    <!-- Control de foco y cerradura -->
+    <h3>Control de Foco y Cerradura</h3>
+    <div>
+      <button class="control" data-control="0">Apagar Foco</button>
+      <button class="control" data-control="1">Encender Foco</button>
+      <div id="foco-status">Foco: Apagado</div>
+    </div>
+    <div>
+      <button class="control" data-control="8">Abrir Cerradura</button>
+      <button class="control" data-control="9">Cerrar Cerradura</button>
+      <div id="cerradura-status">Cerradura: Cerrada</div>
+    </div>
+
+    <div id="status"></div>
+  </div>
+  <script src="JS.js"></script>
+</body>
+</html>
