@@ -1,55 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Control de Casa Inteligente</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Bluetooth</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Control de Casa Inteligente</h1>
-    <p class="subtitle">Ingresa la contraseña para abrir la puerta:</p>
-    <div class="password-display">
-      <input type="text" id="password" readonly>
-    </div>
-    <div class="keypad">
-      <!-- Botones del teclado -->
-      <button class="key" data-key="1">1</button>
-      <button class="key" data-key="2">2</button>
-      <button class="key" data-key="3">3</button>
-      <button class="key" data-key="4">4</button>
-      <button class="key" data-key="5">5</button>
-      <button class="key" data-key="6">6</button>
-      <button class="key" data-key="7">7</button>
-      <button class="key" data-key="8">8</button>
-      <button class="key" data-key="9">9</button>
-      <button class="key" data-key="*">*</button>
-      <button class="key" data-key="0">0</button>
-      <button class="key" data-key="#">#</button>
-      <button id="clear">Borrar</button>
-      <button id="send">Enviar</button>
+    <video autoplay loop muted id="background-video">
+        <source src="TECNO.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+
+    <div class="container">
+        <h1>TECNOHOGAR</h1>
+        <p class="subtitle">Controla tu hogar de forma inteligente desde tu teléfono móvil. 
+            Conectividad Bluetooth y Wi-Fi para que tengas el control total de tus dispositivos, luces y más.</p>
+
+        <div id="statusMessage">Estado: Esperando acción...</div>
+
+        <!-- Campo de entrada para la contraseña -->
+        <div class="password-container">
+            <input type="password" id="passwordField" readonly placeholder="Ingresa tu contraseña">
+        </div>
+
+        <!-- Teclado 4x4 -->
+        <div class="keypad">
+            <button onclick="pressKey('1')">1</button>
+            <button onclick="pressKey('2')">2</button>
+            <button onclick="pressKey('3')">3</button>
+            <button onclick="pressKey('A')">A</button>
+
+            <button onclick="pressKey('4')">4</button>
+            <button onclick="pressKey('5')">5</button>
+            <button onclick="pressKey('6')">6</button>
+            <button onclick="pressKey('B')">B</button>
+
+            <button onclick="pressKey('7')">7</button>
+            <button onclick="pressKey('8')">8</button>
+            <button onclick="pressKey('9')">9</button>
+            <button onclick="pressKey('C')">C</button>
+
+            <button onclick="pressKey('*')">*</button>
+            <button onclick="pressKey('0')">0</button>
+            <button onclick="pressKey('#')">#</button>
+            <button onclick="pressKey('D')">D</button>
+        </div>
+
+        <!-- Botón para validar la contraseña -->
+        <button onclick="validatePassword()">Abrir puerta</button>
     </div>
 
-    <!-- Botón de Conectar y lista de dispositivos -->
-    <button id="connect-btn">Conectar</button>
-    <div id="device-list" style="display:none;"></div> <!-- Lista de dispositivos -->
-
-    <!-- Control de foco y cerradura -->
-    <h3>Control de Foco y Cerradura</h3>
-    <div>
-      <button class="control" data-control="0">Apagar Foco</button>
-      <button class="control" data-control="1">Encender Foco</button>
-      <div id="foco-status">Foco: Apagado</div>
-    </div>
-    <div>
-      <button class="control" data-control="8">Abrir Cerradura</button>
-      <button class="control" data-control="9">Cerrar Cerradura</button>
-      <div id="cerradura-status">Cerradura: Cerrada</div>
-    </div>
-
-    <div id="status"></div>
-  </div>
-  <script src="JS.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
